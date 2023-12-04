@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.17/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+<body class="max-w-screen-xl mx-auto  md:px-8 lg:px-12">
+    <header>
+        <section>
+          <div class="sticky top-0">
+            <p class="sticky top-0 bg-lime-600 p-4 text-center text-white text-lg ">$7.50 Delivery charge / Or FREE pick up ~> FREE delivery for orders with a value of $99 or more!</p>
+          </div>
+            
+            <p class="mt-6 text-center text-lg text-red-700">Delivery and/or Pick up is for the first available Wednesday/Saturday after placing your order!</p>
+        </section>
+        <div class="flex items-center justify-center">
+            <img src="farm_to_door_logo.webp" class="w-88 h-44" alt="Centered Image">
+          </div>
+  <!-- Navigation Bar -->
+  <section>
+    <div class="navbar bg-base-100">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a>Home</a></li>
+            <li>
+              <a>Seasonal Items</a>
+              <ul class="p-2">
+                <li><a>Winter</a></li>
+                <li><a>Pre-Spring</a></li>
+                <li><a>Spring</a></li>
+                <li><a>Pre-Monsoon</a></li>
+                <li><a>Monsoon</a></li>
+                <li><a>Autumn</a></li>
+              </ul>
+            </li>
+            <li><a>Buy a Gift Card</a></li>
+            <li><a>Courses</a></li>
+            <li><a>About Us</a></li>
+            <li><a>Sign Out</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a class="text-xl font-bold text-green-700">HOME</a></li>
+          <li>
+            <details>
+              <summary class="text-xl font-bold text-green-700">SEASONAL ITEMS</summary>
+              <ul class="p-2">
+                <li><a>Winter</a></li>
+                <li><a>Pre-Spring</a></li>
+                <li><a>Spring</a></li>
+                <li><a>Pre-Monsoon</a></li>
+                <li><a>Monsoon</a></li>
+                <li><a>Autumn</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="text-xl font-bold text-green-700">BUY GIFT CARD</a></li>
+          <li><a class="text-xl font-bold text-green-700">COURSES</a></li>
+          <li><a class="text-xl font-bold text-green-700">ABOUT US</a></li>
+          <li><a href="logIn.html" class="text-xl font-bold text-green-700">SIGN OUT</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        
+      </div>
+    </div>
+  </section>
+    </header>
+
+    <main>
+        <section>
+            <div class="carousel w-full relative">
+                <div id="slide1" class="carousel-item relative w-full">
+                  <img src="carousel-1.jpg" class="w-full" />
+                  <div class="absolute top-1/2 right-48 left-1/3 transform -translate-x-1/2 -translate-y-1/2  text-white">
+                    <p class="text-3xl font-extrabold mb-4">Organic Vegetables</p>
+                    <p class="text-6xl font-extrabold">Organic Vegetables For Healthy Life</p>
+                    <div class="mt-4">
+                      <button class="btn btn-success mr-4 text-white">Explore</button>
+                      <a href="contact.html"><button class="btn btn-secondary">Contact</button></a>
+                      
+                  </div>
+                </div>
+                
+                
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" class="btn btn-active">❮</a> 
+                    <a href="#slide2" class="btn btn-active">❯</a>
+                  </div>
+                </div> 
+                <div id="slide2" class="carousel-item relative w-full">
+                  <img src="carousel-2.jpg" class="w-full " />
+                  <div class="absolute top-1/2 right-48 left-1/3 transform -translate-x-1/2 -translate-y-1/2  text-white">
+                    <p class="text-3xl font-extrabold mb-4">Organic Fruits</p>
+                    <p class="text-6xl font-extrabold">Organic Fruits For For Better Health</p>
+                    <div class="mt-4">
+                      <button class="btn btn-success mr-4 text-white">Explore</button>
+                      <a href="contact.html"><button class="btn btn-secondary bg-orange-500">Contact</button></a>
+                      
+                  </div>
+                </div>
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" class="btn btn-active">❮</a> 
+                    <a href="#slide1" class="btn btn-active">❯</a>
+                  </div>
+                </div> 
+              </div>
+    
+              <div class="flex w-2/3 mx-auto absolute -mt-24 ml-40">
+                <!-- First Div with Background Image -->
+                <div class="flex-1 bg-cover bg-center mr-0 w-1/2" style="background-image: url('organic_vegitables-removebg-preview.png')">
+                    <div class="bg-opacity-75 p-6 text-white">
+                        <p class="text-2xl font-semibold">Organic Vegetables</p>
+                        <p class="mt-4">Dolor magna ipsum elitr sea erat elitr amet ipsum stet justo dolor, amet lorem diam no duo sed dolore amet diam</p>
+                        <button class="mt-4 bg-green-500 text-white py-2 px-4 rounded-full">Read More</button>
+                    </div>
+                </div>
+        
+                <!-- Second Div with Background Image -->
+                <div class="flex-1 bg-cover bg-center ml-0 w-1/2" style="background-image: url('organic_fruits-removebg-preview.png')">
+                    <div class="bg-opacity-75 p-6 text-white">
+                        <p class="text-2xl font-semibold">Organic Fruits</p>
+                        <p class="mt-4">Organic fruits are cultivated without synthetic pesticides or fertilizers, promoting environmentally friendly and sustainable agricultural practices while offering a natural and nutritious option for consumers.</p>
+                        <button class="mt-4 bg-green-500 text-white py-2 px-4 rounded-full">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <footer class="footer p-10 bg-base-200 text-base-content mt-64">
+            <nav>
+              <header class="footer-title">Services</header> 
+              <a class="link link-hover">Branding</a>
+              <a class="link link-hover">Design</a>
+              <a class="link link-hover">Marketing</a>
+              <a class="link link-hover">Advertisement</a>
+            </nav> 
+            <nav>
+              <header class="footer-title">Company</header> 
+              <a class="link link-hover">About us</a>
+              <a class="link link-hover">Contact</a>
+              <a class="link link-hover">Jobs</a>
+              <a class="link link-hover">Press kit</a>
+            </nav> 
+            <nav>
+              <header class="footer-title">Legal</header> 
+              <a class="link link-hover">Terms of use</a>
+              <a class="link link-hover">Privacy policy</a>
+              <a class="link link-hover">Cookie policy</a>
+            </nav> 
+            <form>
+              <header class="footer-title">Newsletter</header> 
+              <fieldset class="form-control w-80">
+                <label class="label">
+                  <span class="label-text">Enter your email address</span>
+                </label> 
+                <div class="join">
+                  <input type="text" placeholder="username@site.com" class="input input-bordered join-item" /> 
+                  <button class="btn btn-primary join-item">Subscribe</button>
+                </div>
+              </fieldset>
+            </form>
+          </footer>
+    </footer>
+</body>
+</html>
