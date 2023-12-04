@@ -17,10 +17,7 @@
             
             <p class="mt-6 text-center text-lg text-red-700">Delivery and/or Pick up is for the first available Wednesday/Saturday after placing your order!</p>
         </section>
-        <!-- <div class="flex items-center justify-center">
-            <img src="farm_to_door_logo.webp" class="w-88 h-44" alt="Centered Image">
-          </div> -->
-  <!-- Navigation Bar -->
+        
   <section>
     <div class="navbar bg-base-100">
       <div class="navbar-start">
@@ -89,27 +86,135 @@
         </div>
 
         <div class="p-10 bg-yellow-100">
-            <div class="flex items-center gap-20">
-                <div>
-                    <img src="digital gift card.webp" alt="">
-                </div>
-                <div class="w-1/2">
-                    <p class="text-2xl font-semibold mb-8">Digital Gift Cards</p>
-                    <p class="text-2xl mb-8"><span class="font-bold">Buy now, send later!</span> Select the date you would like your gift card to arrive. Digital gift cards will be sent directly to your loved one's email inbox. Include a gift note for that personal touch.</p>
-                    <button class="btn btn-warning rounded-l-full rounded-r-full text-white font-semibold">Buy Now</button>
-                </div>
-            </div>
-            <div class="flex mt-20 gap-20 items-center">
-                <div class="w-1/2">
-                    <p class="text-2xl font-semibold mb-8">Physical Gift Cards</p>
-                    <p class="text-2xl mb-8">Want to gift Farm to People in person? Shop physical gift cards to be added to your next delivery. Please note you must have an account with us to purchase physical gift cards.</p>
-                    <button class="btn btn-warning rounded-l-full rounded-r-full text-white font-semibold">Buy Now</button>
-                </div>
-                <div>
-                    <img src="hand gift card.gif" class="h-1/2" alt="">
-                </div>
-            </div>
-            
+
+<!-- Digital Gift Cards Section -->
+<div class="container mx-auto mt-20">
+    <div class="flex gap-20 items-center">
+        <div>
+            <img src="hand gift card.gif" class="h-1/2" alt="">
+          </div>
+      <div class="w-1/2">
+        <p class="text-2xl font-semibold mb-8">Digital Gift Cards</p>
+        <p class="text-2xl mb-8"><span class="font-bold">Buy now, send later!</span> Select the date you would like your gift card to arrive. Digital gift cards will be sent directly to your loved one's email inbox. Include a gift note for that personal touch.</p>
+        <button id="digitalBuyNowBtn" class="btn btn-warning rounded-l-full rounded-r-full text-white font-semibold">Buy Now</button>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Physical Gift Cards Section -->
+  <div class="container mx-auto mt-20">
+    <div class="flex gap-20 items-center">
+      <div class="w-1/2">
+        <p class="text-2xl font-semibold mb-8">Physical Gift Cards</p>
+        <p class="text-2xl mb-8">Want to gift Farm to People in person? Shop physical gift cards to be added to your next delivery. Please note you must have an account with us to purchase physical gift cards.</p>
+        <button id="physicalBuyNowBtn" class="btn btn-warning rounded-l-full rounded-r-full text-white font-semibold">Buy Now</button>
+      </div>
+      <div>
+        <img src="hand gift card.gif" class="h-1/2" alt="">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Payment Drawer -->
+  <div id="paymentDrawer" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden">
+    <div class="flex justify-end p-4">
+      <button id="closeDrawerBtn" class="text-white">&times;</button>
+    </div>
+    <div class="container mx-auto p-8 bg-white rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4">Payment Options</h2>
+     
+      <div class="mb-4">
+        <label class="block text-gray-700">Select Payment Method:</label>
+        <select id="drawerPaymentMethod" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
+          <option value="" disabled selected>Select an option</option>
+          <option value="cash">Cash</option>
+          <option value="digital">Digital</option>
+        </select>
+      </div>
+    
+      <div id="digitalOptions" class="hidden">
+        <div class="mb-4">
+          <label class="block text-gray-700">Select Digital Option:</label>
+          <select id="digitalPaymentOption" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300">
+            <option value="" disabled selected>Select an option</option>
+            <option value="bkash">Bkash</option>
+            <option value="nagad">Nagad</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Enter Phone Number:</label>
+          <input id="phoneNumber" type="tel" class="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300" placeholder="Enter your phone number">
+        </div>
+      </div>
+      <button id="makePaymentDrawerBtn" class="w-full bg-blue-500 text-white py-3 px-6 rounded-full focus:outline-none focus:ring focus:border-blue-300" disabled>Make Payment</button>
+    </div>
+  </div>
+  
+  <script>
+    // Open the payment drawer when Buy Now button is clicked for Digital Gift Cards
+    document.getElementById('digitalBuyNowBtn').addEventListener('click', () => {
+      document.getElementById('paymentDrawer').classList.remove('hidden');
+    });
+  
+    // Open the payment drawer when Buy Now button is clicked for Physical Gift Cards
+    document.getElementById('physicalBuyNowBtn').addEventListener('click', () => {
+      document.getElementById('paymentDrawer').classList.remove('hidden');
+    });
+  
+    // Close the payment drawer when the close button is clicked
+    document.getElementById('closeDrawerBtn').addEventListener('click', () => {
+      document.getElementById('paymentDrawer').classList.add('hidden');
+    });
+  
+    // Handle changes in the payment method selection for the drawer
+    document.getElementById('drawerPaymentMethod').addEventListener('change', () => {
+      const makePaymentBtn = document.getElementById('makePaymentDrawerBtn');
+      const digitalOptions = document.getElementById('digitalOptions');
+      const selectedOption = document.getElementById('drawerPaymentMethod').value;
+  
+      // Show/hide digital options based on the selected payment method
+      if (selectedOption === 'digital') {
+        digitalOptions.classList.remove('hidden');
+      } else {
+        digitalOptions.classList.add('hidden');
+      }
+  
+      // Enable the Make Payment button for Cash option
+      makePaymentBtn.disabled = selectedOption !== 'cash';
+    });
+  
+    // Enable the Make Payment button when a digital option is selected
+    document.getElementById('digitalPaymentOption').addEventListener('change', () => {
+      const makePaymentBtn = document.getElementById('makePaymentDrawerBtn');
+      makePaymentBtn.disabled = false;
+    });
+  
+    // Handle Make Payment button click for the drawer
+    document.getElementById('makePaymentDrawerBtn').addEventListener('click', () => {
+      const paymentMethod = document.getElementById('drawerPaymentMethod').value;
+  
+      if (paymentMethod === 'cash') {
+        alert('Thank you! Payment will be taken soon.');
+      } else if (paymentMethod === 'digital') {
+        const digitalOption = document.getElementById('digitalPaymentOption').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+  
+        if (digitalOption && phoneNumber) {
+          alert('Thank you! Your payment is collected.');
+          // Clear the input fields after payment is processed
+          document.getElementById('phoneNumber').value = '';
+        } else {
+          alert('Please select a digital payment option and enter your phone number.');
+        }
+      } else {
+        alert('Please select a payment method.');
+      }
+  
+      // Close the drawer after payment is processed
+      document.getElementById('paymentDrawer').classList.add('hidden');
+    });
+  </script>
         </div>
     </section>
 
