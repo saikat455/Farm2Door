@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <title>Login Page</title>
 </head>
-<body class="font-sans ">
 
-  <div class="container mx-auto flex justify-center items-center h-screen bg-green-500">
-    <div class="w-96 bg-white p-8 rounded-lg shadow-lg">
-      <h2 class="text-2xl font-semibold mb-6 text-center text-orange-700">Login</h2>
-      <form onsubmit="redirectToHome(); return false;">
-        <div class="mb-4">
-          <label for="username" class="block text-gray-700">Username</label>
-          <input type="text" id="username" name="username" class="w-full p-2 border rounded">
-        </div>
-        <div class="mb-4">
-          <label for="password" class="block text-gray-700">Password</label>
-          <input type="password" id="password" name="password" class="w-full p-2 border rounded">
-        </div>
-        <button type="submit" class="w-full bg-green-500 text-white p-2 rounded">Login</button>
-      </form>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
 
-      <p class="mt-2 text-center text-gray-600"><a href="#" class="text-green-500">Forgot Password?</a></p>
-      <p class="mt-4 text-center text-gray-600">Don't have an account? <a href="signUp.html" class="text-green-500">Please Sign Up</a></p>
-    </div>
+  <div class="max-w-md w-full p-6 bg-white rounded-md shadow-md">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Login</h2>
+
+    <form id="loginForm">
+      <div class="mb-4">
+        <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
+        <input type="text" id="username" name="username" class="mt-1 p-2 border rounded w-full">
+      </div>
+
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
+        <input type="password" id="password" name="password" class="mt-1 p-2 border rounded w-full">
+      </div>
+
+      <button type="button" onclick="login()" class="w-full bg-green-600 text-white py-2 rounded-md">Login</button>
+    </form>
+
+    <p class="mt-4 text-center">
+      <a href="#" class="text-green-800">Forgot Password?</a><br>
+      Don't have an account? <a href="signUp.html" class="text-blue-400">Please Sign Up</a>
+    </p>
   </div>
+
   <script>
-    function redirectToHome() {
-      window.location.href = 'home.html';
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Check credentials and redirect
+      if (username === 'user' && password === '12345') {
+        window.location.href = 'home.html';
+      } else if (username === 'admin' && password === '123456') {
+        window.location.href = 'admin.html';
+      } else {
+        alert('Invalid username or password. Please try again.');
+      }
     }
   </script>
 
 </body>
+
 </html>

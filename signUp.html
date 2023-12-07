@@ -12,7 +12,7 @@
         <h2 class="text-3xl font-semibold text-green-800 mb-6">Sign Up</h2>
 
         <!-- Sign Up Form -->
-        <form action="#" method="post">
+        <form onsubmit="redirectToLogin(); return false;" method="post">
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-600">Full Name</label>
                 <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:border-green-500">
@@ -36,6 +36,11 @@
         <!-- Have an account? Sign in -->
         <p class="text-gray-600 text-sm">Already have an account? <a href="logIn.html" class="text-green-500">Please sign in.</a></p>
     </div>
+    <script>
+        function redirectToLogin() {
+          window.location.href = 'logIn.html';
+        }
+      </script>
 
 </body>
 </html>
